@@ -1,7 +1,7 @@
 {
   "name": "@mocoding/odata-client",
-  "version": "0.0.0",
-  "description": "Generic Odata Client",
+  "version": "1.0.0",
+  "description": "OData V4 Client with generics",
   "main": "lib/odata-client.js",
   "unpkg": "dist/odata-client.js",
   "module": "es/odata-client.js",
@@ -18,15 +18,14 @@
     "url": "git+https://github.com/mocoding-software/odata-client.git"
   },
   "keywords": [
-    "redux",
-    "automata",
-    "state machine",
-    "state",
-    "redux actions",
-    "predictable state",
-    "state chart",
-    "finite state machine",
-    "fsm"
+    "odata",
+    "typescript",
+    "odata client",
+    "query builder",
+    "odata",
+    "mocoding stack",
+    "generics",
+    "odata v4"
   ],
   "authors": [
     "MOCODING LLC",
