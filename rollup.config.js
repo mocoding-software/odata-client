@@ -9,6 +9,7 @@ import pkg from "./package.json";
 
 const extensions = [".ts"];
 const noDeclarationFiles = { compilerOptions: { declaration: false } };
+const tsconfig = "tsconfig.build.json";
 
 const babelRuntimeVersion = pkg.dependencies["@babel/runtime"].replace(/^[^0-9]*/, "");
 
@@ -33,7 +34,7 @@ export default [
       nodeResolve({
         extensions,
       }),
-      typescript({ useTsconfigDeclarationDir: true }),
+      typescript({ useTsconfigDeclarationDir: true, tsconfig }),
       babel({
         extensions,
         plugins: [["@babel/plugin-transform-runtime", { version: babelRuntimeVersion }]],
@@ -57,6 +58,7 @@ export default [
       }),
       typescript({
         tsconfigOverride: {
+          tsconfig,
           compilerOptions: {
             declaration: false,
             module: "es2015",
@@ -84,7 +86,7 @@ export default [
       replace({
         "process.env.NODE_ENV": JSON.stringify("production"),
       }),
-      typescript({ tsconfigOverride: noDeclarationFiles }),
+      typescript({ tsconfigOverride: noDeclarationFiles, tsconfig }),
       babel({
         extensions,
         exclude: "node_modules/**",
@@ -114,7 +116,7 @@ export default [
       nodeResolve({
         extensions,
       }),
-      typescript({ tsconfigOverride: noDeclarationFiles }),
+      typescript({ tsconfigOverride: noDeclarationFiles, tsconfig }),
       babel({
         extensions,
         exclude: "node_modules/**",
@@ -139,7 +141,7 @@ export default [
       nodeResolve({
         extensions,
       }),
-      typescript({ tsconfigOverride: noDeclarationFiles }),
+      typescript({ tsconfigOverride: noDeclarationFiles, tsconfig }),
       babel({
         extensions,
         exclude: "node_modules/**",

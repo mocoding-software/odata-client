@@ -1,5 +1,5 @@
 import { Entity, ODataOperations, ODataConfig, ODataResponse, Predicate, CountPredicate } from "odata";
-import { ODataQueryWrapper } from "./odata-query";
+import { ODataQueryWrapper } from "odata-query";
 
 export class ODataClient<T extends Entity> implements ODataOperations<T> {
   private url: string;

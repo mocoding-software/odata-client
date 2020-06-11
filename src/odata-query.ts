@@ -1,4 +1,4 @@
-import { ODataQueryParams, ODataQuery, ODataCountQuery } from "./odata";
+import { ODataQueryParams, ODataQuery, ODataCountQuery } from "odata";
 
 export class ODataQueryWrapper<T> implements ODataQuery<T>, ODataCountQuery<T> {
   private query: ODataQueryParams = {};

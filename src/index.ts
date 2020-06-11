@@ -1,2 +1,2 @@
-export * from "./odata";
-export * from "./odata-context";
+export * from "odata";
+export * from "odata-context";
