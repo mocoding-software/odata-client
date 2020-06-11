@@ -39,7 +39,7 @@ stages:
               scannerMode: 'CLI'
               configMode: 'manual'
               cliProjectKey: 'mocoding-software_odata-client'
-              cliProjectName: 'Redux Automata'
+              cliProjectName: 'odata-client'
               cliSources: 'src'
               extraProperties: |
                 # Additional properties that will be passed to the scanner, 
