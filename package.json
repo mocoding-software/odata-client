@@ -1,0 +1,83 @@
+{
+  "name": "@mocoding/odata-client",
+  "version": "0.0.0",
+  "description": "Generic Odata Client",
+  "main": "lib/odata-client.js",
+  "unpkg": "dist/odata-client.js",
+  "module": "es/odata-client.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib dist es coverage types",
+    "build": "rollup -c",
+    "lint": "eslint --ext ts src test",
+    "test": "jest --verbose --coverage",
+    "prepack": "yarn lint && yarn test && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mocoding-software/odata-client.git"
+  },
+  "keywords": [
+    "redux",
+    "automata",
+    "state machine",
+    "state",
+    "redux actions",
+    "predictable state",
+    "state chart",
+    "finite state machine",
+    "fsm"
+  ],
+  "authors": [
+    "MOCODING LLC",
+    "Dennis Miasoutov <me@offbeatful.com> (https://github.com/offbeatful)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mocoding-software/odata-client/issues"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src",
+    "types"
+  ],
+  "homepage": "https://github.com/mocoding-software/odata-client#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-only-warn": "^1.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^26.0.1",
+    "jest-sonar-reporter": "^2.0.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.15.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.6"
+  },
+  "jestSonar": {
+    "reportPath": ".coverage",
+    "reportFile": "test-report.xml",
+    "indent": 2
+  }
+}
