@@ -1,5 +1,5 @@
-import { DataContext, Entity, ODataConfig } from "../src/odata";
-import { ODataClient } from "../src/odata-client";
+import { DataContext, Entity, ODataConfig } from "./odata";
+import { ODataClient } from "./odata-client";
 
 export function oData(config: Partial<ODataConfig>): DataContext {
   const odataConfig: ODataConfig = {

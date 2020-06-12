@@ -1,4 +1,4 @@
-import { ODataAnnotations } from "../src/odata";
+import { ODataAnnotations } from "./odata";
 
 /*
  * http://docs.oasis-open.org/odata/odata-json-format/v4.0/os/odata-json-format-v4.0-os.html#_Instance_Annotations
