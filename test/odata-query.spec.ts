@@ -29,7 +29,7 @@ describe("OData Query Test", () => {
     expect(actualPayload.value.length).toBe(1);
   });
   test("OrderBy Test", async () => {
-    mock.mock200("/odata/entity?$orderBy=test+asc", [expectedPayload]);
+    mock.mock200("/odata/entity?$orderBy=test%20asc", [expectedPayload]);
     const actualPayload = await testEntity.query((_) => _.orderBy("test asc"));
     expect(actualPayload.value.length).toBe(1);
   });
