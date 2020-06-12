@@ -7,8 +7,8 @@ import {
   Annotated,
   ODataError,
 } from "odata";
-import { ODataQueryWrapper } from "odata-query";
-import { getAnnotations } from "odata-annotations";
+import { ODataQueryWrapper } from "../src/odata-query";
+import { getAnnotations } from "../src/odata-annotations";
 
 export class ODataClient<T extends Entity> implements ODataOperations<T> {
   private url: string;
