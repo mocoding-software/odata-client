@@ -55,14 +55,14 @@ export class ODataQueryWrapper<T> implements ODataQuery<T>, ODataCountQuery<T> {
   }
 
   public get(): string {
-    const params = new URLSearchParams("?");
+    const paramsDict: string[] = [];
     for (const key in this.query) {
       if (Object.prototype.hasOwnProperty.call(this.query, key)) {
-        const value = this.query[key]?.toString() ?? "";
-        if (key) params.append(key, value);
+        const value = encodeURIComponent(this.query[key]?.toString() ?? "");
+        if (key) paramsDict.push(`${key}=${value}`);
       }
     }
-    const str = params.toString().replace("%24", "$");
+    const str = paramsDict.join("&");
     return str ? "?" + str : "";
   }
 }

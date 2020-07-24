@@ -19,12 +19,31 @@ export class FetchMock {
     return Promise.resolve(this.response);
   }
 
-  public mock200<T>(request: string, payloadResponse: T | undefined = undefined): void {
+  public mock200<T>(
+    request: string,
+    payloadResponse: T | string | undefined = undefined,
+  ): void {
     this.url = request;
     this.response = this.createResponse(true, 200, "Success", payloadResponse);
   }
 
-  public mock201<T>(request: string, payloadResponse: T | undefined = undefined): void {
+  public mock400<T>(
+    request: string,
+    payloadResponse: T | string | undefined = undefined,
+  ): void {
+    this.url = request;
+    this.response = this.createResponse(false, 400, "Bad Reuqest", payloadResponse);
+  }
+
+  public mock500<T>(request: string): void {
+    this.url = request;
+    this.response = this.createResponse(false, 500, "Internal Server Error");
+  }
+
+  public mock201<T>(
+    request: string,
+    payloadResponse: T | string | undefined = undefined,
+  ): void {
     this.url = request;
     this.response = this.createResponse(true, 201, "Created", payloadResponse);
   }
@@ -34,7 +53,7 @@ export class FetchMock {
     this.response = this.createResponse(true, 204, "No Content");
   }
 
-  public assertRequest(func: assertFunc): void {
+  public assertRequest(func: assertFunc | undefined): void {
     this.assert = func;
   }
 
@@ -42,9 +61,13 @@ export class FetchMock {
     ok: boolean,
     status: number,
     statusText: string,
-    payloadResponse: T | undefined = undefined,
+    payloadResponse: T | string | undefined = undefined,
   ): Response {
-    const content = payloadResponse ? JSON.stringify({ value: payloadResponse }) : "0";
+    const content = payloadResponse
+      ? typeof payloadResponse === "string"
+        ? payloadResponse
+        : JSON.stringify(payloadResponse)
+      : "";
 
     const response: Response = {
       headers: new Headers(),

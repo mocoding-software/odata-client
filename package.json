@@ -69,6 +69,7 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "ts-jest": "^26.1.0",
+    "ts-transformer-keys": "^0.4.1",
     "typescript": "^3.9.5"
   },
   "dependencies": {
